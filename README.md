@@ -121,7 +121,7 @@ import {
   }
     try {
     // Mendapatkan berita dari Detik News
-    const data = await detiknews("Hello World!", "id");
+    const data = await translate("Hello World!", "id");
     console.log(data);
   } catch (error) {
     console.error("Error fetching Detik News:", error.message);
