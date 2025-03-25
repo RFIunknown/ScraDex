@@ -19,7 +19,7 @@ ScraDex adalah sebuah kumpulan berbagai macam scraper yang mencakup downloader, 
 | Games       | ✅     |
 | Downloader  | ✅     |
 | Tools       | ✅     |
-| Fitur Laiinya       | OwTeiWei    |
+| Fitur Lainnya       | OwTeiWei    |
 
 ## Installation
 
