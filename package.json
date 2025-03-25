@@ -1,0 +1,82 @@
+{
+	"name": "@RFIunknown/ScraDex",
+	"version": "0.0.2",
+	"description": "Scrape module",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"types": "./dist/@types/index.d.ts",
+			"require": "./dist/cjs/index.js"
+		},
+		"./downloader": {
+			"import": "./dist/esm/downloader/index.js",
+			"types": "./dist/@types/downloader/index.d.ts",
+			"require": "./dist/cjs/downloader/index.js"
+		}
+	},
+	"types": "./dist/@types/index.d.ts",
+	"main": "./dist/cjs/index.js",
+	"scripts": {
+		"clean": "rimraf ./dist",
+		"lint": "eslint src/**/*.ts",
+		"lint:fix": "eslint src/**/*.ts --fix",
+		"build:esm": "tsc -p tsconfig.esm.json",
+		"build:cjs": "tsc -p tsconfig.cjs.json",
+		"build:types": "tsc -p tsconfig.types.json",
+		"fix": "fix-esm-import-path dist/esm",
+		"build:all": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && npm run fix && node scripts/write-package.js",
+		"prepare": "npm run build:all"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RFIunknown/ScraDex.git"
+	},
+	"keywords": [
+		"scraper",
+		"scrape",
+		"api"
+	],
+	"author": "Muhammad Rifai",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/RFIunknown/ScraDex/issues"
+	},
+	"homepage": "https://github.com/RFIunknown/ScraDex#readme",
+	"dependencies": {
+		"@types/got": "^9.6.12",
+		"axios": "^1.7.9",
+		"cheerio": "^1.0.0",
+		"got": "^11.8.6",
+		"qs": "^6.13.0",
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@types/qs": "^6.9.18",
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"@typescript-eslint/parser": "^5.53.0",
+		"eslint": "^8.34.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-n": "^15.6.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-promise": "^6.1.1",
+		"fix-esm-import-path": "^1.3.1",
+		"prettier": "^3.2.5",
+		"rimraf": "^4.1.2",
+		"ts-node": "^10.9.2"
+	},
+	"directories": {
+		"dist": "dist",
+		"src": "src",
+		"scripts": "scripts"
+	},
+	"files": [
+		"dist/**/*.js",
+		"dist/**/*.d.ts",
+		"dist/**/package.json",
+		"scripts/*"
+	]
+}
+
