@@ -1,7 +1,7 @@
 (async () => { 
     try {
-        const { twitter, gdrive } = require("ScraDex"); // Import dari module ScraDex
-        const data = await gdrive("https://drive.google.com/file/d/1gaESnr00uRO14DDexwEczgxe_gmerPfN/view?usp=drivesdk");
+        const { instagramdl, sfiledl, facebookdl, twitterdl, gdrivedl, teraboxdl, threadsdl, snackvideodl } = require("@RFIunknown/ScraDex"); // Import dari module ScraDex
+        const data = await snackvideodl("https://sck.io/p/xP9sDodV");
         console.log(data); // Output JSON
     } catch (error) {
         console.error("Error fetching:", error.message);

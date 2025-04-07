@@ -1,4 +1,5 @@
 import axios from "axios";
+import { errorHandling } from "../Interface";
 
 interface ThreadsResponse {
   success: boolean;
@@ -7,14 +8,8 @@ interface ThreadsResponse {
   error?: any;
 }
 
-interface ErrorHandling {
-  success: boolean;
-  message: string;
-  error?: any;
-}
-
-export async function threadsdl(url: string): Promise<ThreadsResponse | ErrorHandling> {
-  return new Promise<ThreadsResponse | ErrorHandling>(async (resolve, reject) => {
+export async function threadsdl(url: string): Promise<ThreadsResponse | errorHandling> {
+  return new Promise<ThreadsResponse | errorHandling>(async (resolve, reject) => {
     try {
       const apiUrl = `https://snapthreads.net/api/download?url=${encodeURIComponent(url)}`;
       

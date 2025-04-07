@@ -19,9 +19,6 @@ export interface SnackVideoResponse {
 
 export async function snackvideodl(url: string): Promise<SnackVideoResponse | errorHandling> {
   return new Promise<SnackVideoResponse | errorHandling>(async (resolve, reject) => {
-    if (!url.startsWith("https://www.snackvideo.com")) {
-      return reject({ error: true, message: "URL tidak valid! Masukkan link SnackVideo yang benar." });
-    }
 
     try {
       const response = await axios.get(url, {
