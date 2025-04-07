@@ -1,6 +1,5 @@
 node_modules
 dist
-*index.js
 *lock.json
 *.lock
 *.log
